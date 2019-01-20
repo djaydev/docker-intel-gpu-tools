@@ -19,7 +19,7 @@ Where:
 - `Port 5900`: for VNC client connection
 - `'USER_ID'='0'`: Runs APP as root which is required by intel-gpu-tools
 
-Browse to http://your-host-ip:5800 to access the Virt-Manager GUI.
+Browse to http://your-host-ip:5800 to access the GUI.
 
 ### Environment Variables
 Some environment variables can be set to customize the behavior of the container and its application. The following list give more details about them available at https://github.com/jlesage/docker-baseimage-gui#environment-variables
