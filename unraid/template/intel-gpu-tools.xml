@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>intel-gpu-tools</Name>
+  <Repository>djaydev/intel-gpu-tools</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>IGT GPU Tools is a collection of tools for development and testing of the DRM drivers. There are many macro-level test suites that get used against the drivers, including xtest, rendercheck, piglit, and oglconform, but failures from those can be difficult to track down to kernel changes, and many require complicated build procedures or specific testing environments to get useful results. Therefore, IGT GPU Tools includes low-level tools and tests specifically for development and testing of the DRM Drivers.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:5800]</WebUI>
+  <TemplateURL/>
+  <Icon>https://applech2.com/wp-content/uploads/2016/11/Intel-Iris-Pro-GPU-logo-icon.jpg</Icon>
+  <ExtraParams>--device /dev/dri:/dev/dri</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1548022382</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>IGT GPU Tools is a collection of tools for development and testing of the DRM drivers. There are many macro-level test suites that get used against the drivers, including xtest, rendercheck, piglit, and oglconform, but failures from those can be difficult to track down to kernel changes, and many require complicated build procedures or specific testing environments to get useful results. Therefore, IGT GPU Tools includes low-level tools and tests specifically for development and testing of the DRM Drivers.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7800</HostPort>
+        <ContainerPort>5800</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>7900</HostPort>
+        <ContainerPort>5900</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>0</Value>
+      <Name>USER_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1280</Value>
+      <Name>DISPLAY_WIDTH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>720</Value>
+      <Name>DISPLAY_HEIGHT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>KEEP_APP_RUNNING</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="WebGUI" Target="5800" Default="" Mode="tcp" Description="Container Port: 5800" Type="Port" Display="always" Required="false" Mask="false">7800</Config>
+  <Config Name="VNC client" Target="5900" Default="" Mode="tcp" Description="Container Port: 5900" Type="Port" Display="always" Required="false" Mask="false">7900</Config>
+  <Config Name="USER_ID" Target="USER_ID" Default="" Mode="" Description="ID of the user the application runs as. See User/Group IDs to better understand when this should be set. (intel-gpu-tools require root)" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="DISPLAY_WIDTH" Target="DISPLAY_WIDTH" Default="" Mode="" Description="Width (in pixels) of the application's window." Type="Variable" Display="always" Required="false" Mask="false">1280</Config>
+  <Config Name="DISPLAY_HEIGHT" Target="DISPLAY_HEIGHT" Default="" Mode="" Description="Height (in pixels) of the application's window." Type="Variable" Display="always" Required="false" Mask="false">720</Config>
+  <Config Name="KEEP_APP_RUNNING" Target="KEEP_APP_RUNNING" Default="" Mode="" Description="When set to 1, the application will be automatically restarted if it crashes or if user quits it." Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+</Container>
