@@ -11,7 +11,7 @@ docker run -d \
     --privileged=true \
     --device /dev/dri:/dev/dri \
     -e 'USER_ID'='0' \
-    djaydev/docker-virt-manager
+    djaydev/intel-gpu-tools
 ```
 
 Where:
