@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>intel-gpu-tools</Name>
   <Repository>djaydev/intel-gpu-tools</Repository>
-  <Registry/>
+  <Registry>https://hub.docker.com/r/djaydev/intel-gpu-tools</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>bash</Shell>
@@ -13,7 +13,7 @@
   <Category/>
   <WebUI>http://[IP]:[PORT:5800]</WebUI>
   <TemplateURL/>
-  <Icon>https://applech2.com/wp-content/uploads/2016/11/Intel-Iris-Pro-GPU-logo-icon.jpg</Icon>
+  <Icon>https://raw.githubusercontent.com/djaydev/docker-intel-gpu-tools/master/icon.png</Icon>
   <ExtraParams>--device /dev/dri:/dev/dri</ExtraParams>
   <PostArgs/>
   <CPUset/>
