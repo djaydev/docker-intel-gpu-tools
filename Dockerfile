@@ -17,6 +17,9 @@ RUN apt-get autoremove -y && \
 RUN APP_ICON_URL=https://ee3.pigugroup.eu/uploaded/intelhd.png && \
     install_app_icon.sh https://ee3.pigugroup.eu/uploaded/intelhd.png
 
+# Copy xfce4-terminal default preferences file.
+COPY terminalrc /config/xdg/config/xfce4/terminal/terminalrc
+
 # Copy the start script.
 COPY startapp.sh /startapp.sh
 
