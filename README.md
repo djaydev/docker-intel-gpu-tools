@@ -1,7 +1,7 @@
 # docker-intel-gpu-tools
 Tools for monitoring intel GPU
 
-Base image used: jlesage/baseimage-gui:ubuntu-18.04
+Base image used: jlesage/baseimage-gui:debian-9
 
 ```
 docker run -d \
