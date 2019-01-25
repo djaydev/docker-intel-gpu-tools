@@ -1,11 +1,11 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:ubuntu-18.04
+FROM jlesage/baseimage-gui:debian-9
 
 # Copy the intel-gpu-tools package to container
 COPY intel-gpu-tools_1.23-3_amd64.deb /tmp/intel-gpu-tools_1.23-3_amd64.deb
 
 # Install packages.
-RUN apt-get update && apt-get install -y xfce4-terminal locales /tmp/intel-gpu-tools_1.23-3_amd64.deb
+RUN apt-get update && apt-get install -y xfce4-terminal /tmp/intel-gpu-tools_1.23-3_amd64.deb
 
 RUN apt-get autoremove -y && \
     apt-get autoclean -y && \
