@@ -7,21 +7,19 @@ COPY intel-gpu-tools_1.23-3_amd64.deb /tmp/intel-gpu-tools_1.23-3_amd64.deb
 # Install packages.
 RUN apt-get update && apt-get install -y xfce4-terminal /tmp/intel-gpu-tools_1.23-3_amd64.deb
 
+# Generate and install favicons.
+RUN APP_ICON_URL=https://ee3.pigugroup.eu/uploaded/intelhd.png && \
+    install_app_icon.sh https://ee3.pigugroup.eu/uploaded/intelhd.png
+
+# Copy the start script.
+COPY startapp.sh /startapp.sh
+
+# Clean
 RUN apt-get autoremove -y && \
     apt-get autoclean -y && \
     apt-get clean -y && \
     apt-get purge -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-# Generate and install favicons.
-RUN APP_ICON_URL=https://ee3.pigugroup.eu/uploaded/intelhd.png && \
-    install_app_icon.sh https://ee3.pigugroup.eu/uploaded/intelhd.png
-
-# Copy xfce4-terminal default preferences file.
-COPY terminalrc /config/xdg/config/xfce4/terminal/terminalrc
-
-# Copy the start script.
-COPY startapp.sh /startapp.sh
 
 # Set the name of the application.
 ENV APP_NAME="intel-gpu-tools"
