@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y wget alien xfce
 
 # Generate and install favicons.
 RUN APP_ICON_URL=https://ee3.pigugroup.eu/uploaded/intelhd.png && \
-    install_app_icon.sh https://ee3.pigugroup.eu/uploaded/intelhd.png
+    install_app_icon.sh "$APP_ICON_URL"
 
 # Copy the start script.
 COPY startapp.sh /startapp.sh
