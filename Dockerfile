@@ -1,21 +1,17 @@
-# djaydev/intelgputools:latest
-
-# Pull base image.
-FROM jlesage/baseimage-gui:debian-9
+# djaydev/intelgputools:latest Pull base image.
+FROM jlesage/baseimage-gui:alpine-3.9-glibc
 
 WORKDIR /tmp
 
 # Install packages.
-RUN apt-get update && apt-get install --no-install-recommends -y wget alien xfce4-terminal && \
-    wget http://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia/distrib/cauldron/x86_64/media/core/release//intel-gpu-tools-1.23-3.mga7.x86_64.rpm && \
-    alien --to-deb intel-gpu-tools-1.23-3.mga7.x86_64.rpm && \
-    apt-get install -y /tmp/intel-gpu-tools_1.23-4_amd64.deb && \
-    apt-get remove wget alien -y && \
-    apt-get autoremove -y && \
-    apt-get autoclean -y && \
-    apt-get clean -y && \
-    apt-get purge -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo "http://dl-3.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    apk add --no-cache wget dbus-x11 libva-intel-driver libva rpm2cpio xfce4-terminal && \
+    wget http://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia/distrib/cauldron/x86_64/media/core/release/intel-gpu-tools-1.23-3.mga7.x86_64.rpm && \
+    rpm2cpio intel-gpu-tools-1.23-3.mga7.x86_64.rpm | cpio -ivd && \
+    cp -r usr/* /usr/ && \
+    apk del wget rpm2cpio && \
+    rm -rf /var/cache/apk/* /tmp/* /tmp/.[!.]*
 
 # Generate and install favicons.
 RUN APP_ICON_URL=https://ee3.pigugroup.eu/uploaded/intelhd.png && \
