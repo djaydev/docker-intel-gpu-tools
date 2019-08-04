@@ -1,7 +1,7 @@
 # djaydev/intelgputools:latest
 
 #Pull base image.
-FROM jlesage/baseimage-gui:alpine-3.9-glibc
+FROM jlesage/baseimage-gui:alpine-3.9
 
 WORKDIR /tmp
 
@@ -21,7 +21,6 @@ RUN APP_ICON_URL=https://ee3.pigugroup.eu/uploaded/intelhd.png && \
 
 # Copy the start script.
 COPY startapp.sh /startapp.sh
-RUN chmod +x /startapp.sh
 
 # Set the name of the application.
 ENV APP_NAME="intel-gpu-tools"
