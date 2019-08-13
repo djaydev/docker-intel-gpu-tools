@@ -4,7 +4,8 @@ Tools for monitoring intel GPU
 
 Base image used: jlesage/baseimage-gui:alpine
 
-```docker run -d \
+```shell
+    docker run -d \
     --name=intel-gpu-tools \
     -p 5800:5800 \
     -p 5900:5900 \
