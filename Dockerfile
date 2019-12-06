@@ -7,7 +7,7 @@ WORKDIR /tmp
 
 # Install packages.
 RUN apk add --no-cache wget dbus-x11 libva-intel-driver libva rpm2cpio xfce4-terminal && \
-    wget http://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia/distrib/cauldron/x86_64/media/core/release/intel-gpu-tools-1.23-3.mga7.x86_64.rpm && \
+    wget http://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia/distrib/cauldron/x86_64/media/core/release//intel-gpu-tools-1.24-1.mga8.x86_64.rpm && \
     rpm2cpio intel-gpu-tools-1.23-3.mga7.x86_64.rpm | cpio -ivd && \
     cp -r usr/* /usr/ && \
     apk del wget rpm2cpio && \
