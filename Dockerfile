@@ -6,7 +6,7 @@ FROM jlesage/baseimage-gui:alpine-3.11-glibc
 WORKDIR /tmp
 
 # Install packages.
-RUN apk add --no-cache wget dbus-x11 libva-intel-driver libva rpm2cpio xfce4-terminal && \
+RUN apk add --no-cache wget dbus-x11 libva-intel-driver libva rpm2cpio lxterminal && \
     wget https://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia/distrib/cauldron/x86_64/media/core/release/intel-gpu-tools-1.25-1.mga8.x86_64.rpm && \
     rpm2cpio intel-gpu-tools-1.25-1.mga8.x86_64.rpm | cpio -ivd && \
     cp -r usr/* /usr/ && \

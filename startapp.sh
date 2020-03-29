@@ -1,4 +1,3 @@
 #!/bin/sh
-mkdir -p /config/xdg/config/xfce4/terminal && \
-printf "[Configuration]\nEncoding=UTF-8\nFontName=Cousine 12\n" >> /config/xdg/config/xfce4/terminal/terminalrc
-exec /usr/bin/xfce4-terminal -e /usr/bin/intel_gpu_top
+sed-patch 's/Monospace 10/Cousine Bold 10/' /usr/share/lxterminal/lxterminal.conf
+exec lxterminal -e /usr/bin/intel_gpu_top
