@@ -11,6 +11,7 @@ RUN apk add --no-cache wget dbus-x11 libva-intel-driver libva rpm2cpio lxtermina
     rpm2cpio intel-gpu-tools-1.25-1.mga8.x86_64.rpm | cpio -ivd && \
     cp -r usr/* /usr/ && \
     apk del wget rpm2cpio && \
+    sed-patch 's/Monospace 10/Cousine Bold 10/' /usr/share/lxterminal/lxterminal.conf && \
     rm -rf /var/cache/apk/* /tmp/* /tmp/.[!.]*
 
 # Generate and install favicons.
