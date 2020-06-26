@@ -1,7 +1,7 @@
 # djaydev/intelgputools:latest
 
 #Pull base image.
-FROM jlesage/baseimage-gui:alpine-3.11-glibc
+FROM jlesage/baseimage-gui:alpine-3.12-glibc
 
 WORKDIR /tmp
 
